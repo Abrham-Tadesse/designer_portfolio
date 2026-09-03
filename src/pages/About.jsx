@@ -12,7 +12,7 @@ export default function About() {
         </div>
         <div className="self-end md:col-span-4">
           <p className="text-xl leading-8">
-            I’m Nora, an independent graphic designer focused on identity, art direction and visual communication.
+            I’m Fasikaw, an independent graphic designer focused on identity, art direction and visual communication.
           </p>
         </div>
       </div>

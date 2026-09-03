@@ -9,15 +9,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-[#171717] text-[#f5f3ee]">
+    <section className="bg-[#d8d1c2] text-[#3f624e]">
       <div className="mx-auto max-w-[1500px] px-5 py-20 md:px-10 md:py-28">
         <SectionLabel>What I do</SectionLabel>
         <div>
           {services.map(([number, title, body]) => (
-            <div key={number} className="grid gap-4 border-t border-white/15 py-8 md:grid-cols-12 md:py-10">
-              <span className="text-xs text-white/35 md:col-span-1">{number}</span>
+            <div key={number} className="grid gap-4 border-t border-[#3f624e]/20 py-8 md:grid-cols-12 md:py-10">
+              <span className="text-xs text-[#3f624e]/55 md:col-span-1">{number}</span>
               <h3 className="display-font text-4xl md:col-span-5 md:text-6xl">{title}</h3>
-              <p className="max-w-xl leading-7 text-white/55 md:col-span-6">{body}</p>
+              <p className="max-w-xl leading-7 text-[#3f624e]/75 md:col-span-6">{body}</p>
             </div>
           ))}
         </div>

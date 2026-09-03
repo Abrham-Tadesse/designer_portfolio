@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 :root {
+  --ink: #202522;
+  --canvas: #f4f0e8;
+  --muted: #69716b;
+  --coral: #e7654b;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #171717;
-  background: #f5f3ee;
+  color: var(--ink);
+  background: var(--canvas);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -15,7 +19,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #f5f3ee;
+  background: var(--canvas);
 }
 
 button, a {
@@ -23,8 +27,8 @@ button, a {
 }
 
 ::selection {
-  background: #171717;
-  color: #f5f3ee;
+  background: var(--coral);
+  color: var(--canvas);
 }
 
 .display-font {

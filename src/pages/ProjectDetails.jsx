@@ -50,7 +50,7 @@ export default function ProjectDetails() {
         ))}
       </section>
 
-      <Link to={`/work/${next.slug}`} className="group block bg-[#171717] text-white">
+      <Link to={`/work/${next.slug}`} className="group block bg-[#202522] text-white">
         <div className="mx-auto flex max-w-[1500px] items-end justify-between px-5 py-20 md:px-10 md:py-28">
           <div>
             <p className="mb-4 text-xs uppercase tracking-[.2em] text-white/45">Next project</p>

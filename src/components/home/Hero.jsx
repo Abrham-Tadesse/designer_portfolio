@@ -6,7 +6,12 @@ export default function Hero() {
     <section className="mx-auto max-w-[1500px] px-5 pb-14 pt-12 md:px-10 md:pb-24 md:pt-16">
       <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-9">
-          <p className="mb-5 text-xs uppercase tracking-[.22em] text-neutral-500">Graphic Designer · Art Director</p>
+          <img
+            src="/images/profile.svg"
+            alt="Fasikaw profile"
+            className="mb-5 h-40 w-40 rounded-full object-cover"
+          />
+          <h2 className="mb-5 text-xs uppercase tracking-[.22em] text-neutral-500">Graphic Designer · Art Director</h2>
           <h1 className="display-font text-[18vw] leading-[.73] md:text-[10.7vw]">
             Visual ideas<br />
             <span className="italic">with impact.</span>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#171717] text-[#f5f3ee]">
+    <footer className="bg-[#202522] text-[#f4f0e8]">
       <div className="mx-auto max-w-[1500px] px-5 py-16 md:px-10 md:py-24">
         <p className="mb-5 text-xs uppercase tracking-[.25em] text-white/45">Have a project in mind?</p>
         <Link to="/contact" className="group flex items-end justify-between border-b border-white/20 pb-8">
@@ -18,7 +18,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="hover:text-white">Instagram</a>
             <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
           </div>
-          <p>© {new Date().getFullYear()} Nora Studio</p>
+          <p>© {new Date().getFullYear()} Fasikaw Studio</p>
         </div>
       </div>
     </footer>

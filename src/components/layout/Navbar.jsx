@@ -12,13 +12,13 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const navClass = ({ isActive }) =>
-    `transition-colors ${isActive ? "text-black" : "text-neutral-500 hover:text-black"}`;
+    `transition-colors ${isActive ? "text-[#202522]" : "text-[#69716b] hover:text-[#e7654b]"}`;
 
   return (
-    <header className="relative z-50 border-b border-black/10 bg-[#f5f3ee]/90 backdrop-blur">
+    <header className="relative z-50 border-b border-[#202522]/10 bg-[#f4f0e8]/90 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 md:px-10">
         <Link to="/" className="text-lg font-black tracking-[-0.04em]" onClick={() => setOpen(false)}>
-          NORA®
+          FASIKAW®
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
@@ -33,7 +33,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <nav className="absolute left-0 top-20 w-full border-b border-black/10 bg-[#f5f3ee] px-5 py-8 md:hidden">
+        <nav className="absolute left-0 top-20 w-full border-b border-[#202522]/10 bg-[#f4f0e8] px-5 py-8 md:hidden">
           <div className="flex flex-col gap-5 text-3xl display-font">
             {links.map(([label, href]) => (
               <NavLink key={href} to={href} className={navClass} onClick={() => setOpen(false)}>
