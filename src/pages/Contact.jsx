@@ -15,8 +15,8 @@ export default function Contact() {
           </p>
         </div>
         <div className="md:col-span-5">
-          <a href="mailto:hello@fasikawstudio.design" className="group flex items-center justify-between border-b border-black py-4 text-xl font-semibold">
-            <span className="flex items-center gap-3"><Mail size={20} /> hello@fasikawstudio.design</span>
+          <a href="mailto:fasikawabateneh69@gmail.com" className="group flex items-center justify-between border-b border-black py-4 text-xl font-semibold">
+            <span className="flex items-center gap-3"><Mail size={20} /> fasikawabateneh69@gmail.com</span>
             <ArrowUpRight className="transition group-hover:-translate-y-1 group-hover:translate-x-1" />
           </a>
           <div className="mt-8 flex gap-6 text-sm">
