@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -5,51 +6,35 @@
   --canvas: #f4f0e8;
   --muted: #69716b;
   --coral: #e7654b;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family: "Inter", sans-serif !important;
   color: var(--ink);
   background: var(--canvas);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+body, h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  min-width: 320px;
-  background: var(--canvas);
+  font-family: "Inter", sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-::selection {
-  background: var(--coral);
-  color: var(--canvas);
-}
-
+/* Global display heading rules with responsive scaling */
 .display-font {
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: -0.055em;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  
+  /* Responsive font sizing for display headings */
+  font-size: clamp(2.5rem, 8vw, 6.5rem) !important;
 }
 
-.noise {
-  background-image:
-    radial-gradient(rgba(20,20,20,.06) .7px, transparent .7px);
-  background-size: 6px 6px;
+/* Specific heading level overrides if needed */
+h1.display-font {
+  font-size: clamp(3rem, 9vw, 7.5rem) !important;
 }
 
-.marquee-track {
-  animation: marquee 24s linear infinite;
-}
-
-@keyframes marquee {
-  to { transform: translateX(-50%); }
+h2.display-font, h3.display-font {
+  font-size: clamp(2.25rem, 5vw, 4.5rem) !important;
 }
