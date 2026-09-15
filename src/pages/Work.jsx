@@ -3,8 +3,13 @@ import ProjectCard from "../components/ui/ProjectCard";
 
 const sectionNames = ["Logos", "Posters", "Flyers", "Packaging", "Others"];
 const categorySections = {
+  Logos: "Logos",
+  Posters: "Posters",
+  Flyers: "Flyers",
   "Brand Identity": "Logos",
   "Campaign Design": "Posters",
+  "Flyer Design": "Flyers",
+  Flyers: "Flyers",
   Packaging: "Packaging",
   Experimental: "Others",
 };
