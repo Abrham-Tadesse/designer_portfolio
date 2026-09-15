@@ -7,9 +7,9 @@ function ProjectView({ project, view, index }) {
 
   if (!isMockup) {
     return (
-      <figure>
-        <div className="overflow-hidden bg-black/5">
-          <img src={view.image} alt={`${project.title} ${view.label}`} className="w-full transition duration-700 hover:scale-[1.02]" />
+      <figure className="h-full">
+        <div className="h-full overflow-hidden bg-black/5">
+          <img src={view.image} alt={`${project.title} ${view.label}`} className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]" />
         </div>
         <figcaption className="mt-3 flex items-center justify-between gap-4 text-xs uppercase tracking-[.16em] text-neutral-500">
           <span>{view.label}</span>
@@ -20,13 +20,13 @@ function ProjectView({ project, view, index }) {
   }
 
   return (
-    <figure className="md:col-span-2">
-      <div className="relative isolate min-h-[28rem] overflow-hidden bg-[#c9c6bf] [background:linear-gradient(180deg,#e8e7e3_0%,#d7d5cf_58%,#aaa8a2_58%,#777672_100%)] md:min-h-[44rem]">
+    <figure className="h-full">
+      <div className="relative isolate h-full min-h-[28rem] overflow-hidden bg-[#c9c6bf] [background:linear-gradient(180deg,#e8e7e3_0%,#d7d5cf_58%,#aaa8a2_58%,#777672_100%)] md:min-h-[44rem]">
         <div className="absolute inset-x-0 top-[58%] h-px bg-black/20" />
         <div className="absolute bottom-0 left-0 h-[42%] w-full opacity-40 [background:repeating-linear-gradient(90deg,transparent_0,transparent_19.8%,rgba(255,255,255,.18)_20%,transparent_20.2%)]" />
         <div className="absolute bottom-[10%] left-1/2 w-[min(68%,34rem)] -translate-x-1/2 rotate-[-2deg] shadow-[2.5rem_2rem_2rem_rgba(0,0,0,.28)]">
           <div className="border-[.55rem] border-[#d8d7d2] bg-[#252525] p-[.45rem] shadow-[inset_0_0_0_1px_rgba(0,0,0,.55)] md:border-[.8rem] md:p-2">
-            <img src={view.image} alt={`${project.title} ${view.label} in an environment`} className="block aspect-[4/3] w-full object-cover" />
+            <img src={view.image} alt={`${project.title} ${view.label} in an environment`} className="block h-full w-full object-cover" />
           </div>
           <div className="mx-auto h-20 w-[18%] bg-gradient-to-r from-[#85847f] via-[#e2e0da] to-[#85847f] shadow-[.4rem_0_1rem_rgba(0,0,0,.2)] md:h-32" />
         </div>
@@ -92,7 +92,7 @@ export default function ProjectDetails() {
           </div>
           <p className="max-w-xs text-right text-sm leading-6 text-neutral-500">Identity, application and the physical world of {project.title}.</p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 md:auto-rows-fr">
           {project.views.map((view, index) => (
             <ProjectView key={view.image} project={project} view={view} index={index} />
           ))}

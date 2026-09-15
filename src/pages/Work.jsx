@@ -2,6 +2,12 @@ import { projects } from "../data/projects";
 import ProjectCard from "../components/ui/ProjectCard";
 
 const sectionNames = ["Logos", "Posters", "Flyers", "Packaging", "Others"];
+const categorySections = {
+  "Brand Identity": "Logos",
+  "Campaign Design": "Posters",
+  Packaging: "Packaging",
+  Experimental: "Others",
+};
 
 const shuffle = (items) => {
   const shuffled = [...items];
@@ -17,15 +23,16 @@ const shuffle = (items) => {
 };
 
 const workSections = sectionNames.map((name) => ({ name, projects: [] }));
-const workImages = shuffle(
-  projects.flatMap((project) => [
-    { project, image: project.cover },
-    ...project.views.map((view) => ({ project, image: view.image })),
-  ]),
-);
 
-workImages.forEach((item, index) => {
-  workSections[index % workSections.length].projects.push(item);
+projects.forEach((project) => {
+  const sectionName = categorySections[project.category] ?? "Others";
+  const section = workSections.find(({ name }) => name === sectionName);
+
+  section.projects.push({ project, image: project.cover });
+});
+
+workSections.forEach((section) => {
+  section.projects = shuffle(section.projects);
 });
 
 export default function Work() {
@@ -51,7 +58,7 @@ export default function Work() {
               {section.projects.map(({ project, image }, index) => (
                 <ProjectCard
                   key={`${section.name}-${project.slug}-${image}`}
-                  project={{ ...project, cover: image, category: section.name }}
+                  project={{ ...project, cover: image }}
                   index={index}
                 />
               ))}

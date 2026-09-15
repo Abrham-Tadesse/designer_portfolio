@@ -1,15 +1,15 @@
 export const projects = [
   {
     slug: "mora-coffee",
-    title: "Mora Coffee",
-    category: "Brand Identity",
+    title: "AI_Thumbnail",
+    category: "Campaign Design",
     year: "2026",
-    client: "Mora Coffee Roasters",
+    client: "AI generator",
     services: ["Brand Strategy", "Visual Identity", "Packaging"],
-    cover: "/images/mora-cover.svg",
+    cover: "/images/AI _Thumbnail.jpg",
     views: [
-      { label: "Identity system", image: "/images/mora-01.svg" },
-      { label: "Packaging mockup", image: "/images/mora-02.svg" },
+      { label: "Identity system", image: "/images/AI _Thumbnail.jpg" },
+      { label: "Packaging mockup", image: "/images/AI _Thumbnail.jpg" },
     ],
     accent: "#c7502c",
     summary: "A warm, expressive identity for an Ethiopian specialty coffee brand designed to feel contemporary without losing its origin story.",
