@@ -17,21 +17,22 @@ const baseProjects = [
     solution: "The identity combines a bold editorial wordmark, earthy geometry and a restrained packaging system that lets origin and roast information stay easy to scan.",
   },
   {
-    slug: "orbit-festival",
-    title: "L-coffee-Logo",
+    slug: "luna-coffee-logo",
+    title: "Luna Coffee Logo",
     category: "Logos",
     year: "2026",
-    client: "Orbit Arts",
-    services: ["Art Direction", "Poster Design", "Social Campaign"],
-    cover: "/images/logo/L-coffee-Logo.png",
+    client: "Luna Coffee",
+    services: ["Logo Design", "Visual Identity", "Art Direction"],
+    cover: "/images/logo/luna-coffee-Logo.png",
+    mockup: "/images/logo/luna_coffe_mockup.jpg",
     views: [
-      { label: "Poster identity", image: "/images/logo/L-coffee-Logo.png" },
-      { label: "Campaign mockup", image: "/images/logo/L-coffee-Logo.png" },
+      { label: "Logo identity", image: "/images/logo/luna-coffee-Logo.png" },
+      { label: "Logo mockup", image: "/images/logo/luna_coffe_mockup.jpg" },
     ],
     accent: "#6f5cff",
-    summary: "An energetic visual campaign for a multidisciplinary creative festival built around motion, collision and experimentation.",
-    challenge: "The event needed one recognizable system that could adapt to dozens of performers, venues and social formats.",
-    solution: "A modular typographic grid and oversized orbital forms create a system that stays identifiable even as color, scale and composition change.",
+    summary: "A warm, memorable logo system for a coffee brand designed to feel distinctive across cups, packaging and digital touchpoints.",
+    challenge: "The brand needed a recognizable mark that could feel crafted and premium without becoming overly formal.",
+    solution: "A compact wordmark and expressive symbol create a flexible identity that remains clear from a small label to a full storefront application.",
   },
   {
     slug: "selam-skincare",
@@ -90,14 +91,11 @@ const baseProjects = [
 
 const imageFolders = {
   Logos: [
-    "L-coffee-Logo.png",
-    "Luna_botanse_mocup.jpg",
+    "luna-coffee-Logo.png",
+    "luna_botanse_logo.jpg",
     "Nova_Tech.png",
     "arua.png",
-    "luna_coffe_mocup.jpg",
     "nati_Logl_1.png",
-    "nova_bakes.jpg",
-    "voga.jpg",
   ],
   Posters: [
     "AI _Thumbnail.jpg",
@@ -112,6 +110,10 @@ const imageFolders = {
   Flyers: ["BURGER_POSTER.jpg", "GYM_huase.jpg", "House.jpg"],
   Packaging: [],
   Others: [],
+};
+const logoMockups = {
+  "luna-coffee-Logo.png": "/images/logo/luna_coffe_mockup.jpg",
+  "luna_botanse_logo.jpg": "/images/logo/Luna_botanse_mockup.jpg",
 };
 const folderPaths = {
   Logos: "logo",
@@ -148,7 +150,13 @@ const additionalProjects = Object.entries(imageFolders).flatMap(([category, file
       client: "Selected work",
       services: [],
       cover: image,
-      views: [{ label: "Full view", image }],
+      mockup: category === "Logos" ? logoMockups[filename] : undefined,
+      views: [
+        { label: category === "Logos" ? "Logo identity" : "Full view", image },
+        ...(category === "Logos" && logoMockups[filename]
+          ? [{ label: "Logo mockup", image: logoMockups[filename] }]
+          : []),
+      ],
       accent: "#151515",
       summary: "A selected piece from the design archive.",
       challenge: "",
