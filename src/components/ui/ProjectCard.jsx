@@ -4,11 +4,11 @@ import { ArrowUpRight } from "lucide-react";
 export default function ProjectCard({ project, index }) {
   return (
     <article className="group">
-      <Link to={`/work/${project.slug}`} className="block overflow-hidden bg-neutral-200">
+      <Link to={`/work/${project.slug}`} className="block aspect-[4/3] overflow-hidden bg-neutral-200">
         <img
           src={project.cover}
           alt={`${project.title} project`}
-          className="aspect-[4/3] w-full object-cover transition duration-700 ease-out group-hover:scale-[1.035]"
+          className="h-full w-full object-contain transition duration-700 ease-out group-hover:scale-[1.035]"
         />
       </Link>
       <div className="mt-4 flex items-start justify-between gap-5">

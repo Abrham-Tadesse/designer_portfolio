@@ -7,10 +7,7 @@ const baseProjects = [
     client: "AI generator",
     services: ["Brand Strategy", "Visual Identity", "Packaging"],
     cover: "/images/posters/AI _Thumbnail.jpg",
-    views: [
-      { label: "Identity system", image: "/images/posters/AI _Thumbnail.jpg" },
-      { label: "Packaging mockup", image: "/images/posters/AI _Thumbnail.jpg" },
-    ],
+    views: [{ label: "Identity system", image: "/images/posters/AI _Thumbnail.jpg" }],
     accent: "#c7502c",
     summary: "A warm, expressive identity for an Ethiopian specialty coffee brand designed to feel contemporary without losing its origin story.",
     challenge: "Mora needed to stand apart from generic premium-coffee branding while remaining flexible across packaging, retail and digital touchpoints.",
@@ -42,10 +39,7 @@ const baseProjects = [
     client: "Selam Botanics",
     services: ["Packaging", "Typography", "Art Direction"],
     cover: "/images/flayers/House.jpg",
-    views: [
-      { label: "Visual identity", image: "/images/flayers/House.jpg" },
-      { label: "Product mockup", image: "/images/flayers/House.jpg" },
-    ],
+    views: [{ label: "Visual identity", image: "/images/flayers/House.jpg" }],
     accent: "#3f624e",
     summary: "A calm packaging family for a botanical skincare label centered on clarity, tactility and everyday ritual.",
     challenge: "The client wanted to communicate natural ingredients without looking rustic, medicinal or interchangeable with competitors.",
@@ -59,10 +53,7 @@ const baseProjects = [
     client: "Self-initiated",
     services: ["Typography", "Poster Series", "Motion Direction"],
     cover: "/images/flayers/GYM_huase.jpg",
-    views: [
-      { label: "Poster identity", image: "/images/flayers/GYM_huase.jpg" },
-      { label: "Type mockup", image: "/images/flayers/GYM_huase.jpg" },
-    ],
+    views: [{ label: "Poster identity", image: "/images/flayers/GYM_huase.jpg" }],
     accent: "#151515",
     summary: "A self-initiated poster series investigating rhythm, repetition and tension through expressive typography.",
     challenge: "The goal was to build a strong body of experimental work without relying on illustration or photography.",
@@ -77,10 +68,7 @@ const baseProjects = [
     client: "Self-initiated",
     services: ["Typography", "Poster Series", "Motion Direction"],
     cover: "/images/flayers/BURGER_POSTER.jpg",
-    views: [
-      { label: "Poster identity", image: "/images/flayers/BURGER_POSTER.jpg" },
-      { label: "Type mockup", image: "/images/flayers/BURGER_POSTER.jpg" },
-    ],
+    views: [{ label: "Poster identity", image: "/images/flayers/BURGER_POSTER.jpg" }],
     accent: "#151515",
     summary: "A self-initiated poster series investigating rhythm, repetition and tension through expressive typography.",
     challenge: "The goal was to build a strong body of experimental work without relying on illustration or photography.",
@@ -134,6 +122,8 @@ const titleFromFilename = (filename) => filename
   .replace(/[_-]+/g, " ")
   .replace(/\b\w/g, (letter) => letter.toUpperCase());
 
+const isMockupFilename = (filename) => filename.toLowerCase().includes("mockup");
+
 const additionalProjects = Object.entries(imageFolders).flatMap(([category, filenames]) =>
   filenames
     .map((filename) => ({
@@ -153,8 +143,8 @@ const additionalProjects = Object.entries(imageFolders).flatMap(([category, file
       mockup: category === "Logos" ? logoMockups[filename] : undefined,
       views: [
         { label: category === "Logos" ? "Logo identity" : "Full view", image },
-        ...(category === "Logos" && logoMockups[filename]
-          ? [{ label: "Logo mockup", image: logoMockups[filename] }]
+        ...(isMockupFilename(filename) || logoMockups[filename]
+          ? [{ label: "Mockup", image: logoMockups[filename] ?? image }]
           : []),
       ],
       accent: "#151515",
