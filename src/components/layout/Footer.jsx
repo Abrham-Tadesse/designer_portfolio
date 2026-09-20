@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { contacts } from "../../data/contacts";
+
 
 export default function Footer() {
   return (
@@ -14,9 +16,11 @@ export default function Footer() {
         <div className="mt-10 flex flex-col justify-between gap-6 text-sm text-white/55 md:flex-row md:items-end">
           <p>Independent graphic designer & art director.</p>
           <div className="flex gap-6">
-            <a href="https://www.behance.net/" target="_blank" rel="noreferrer" className="hover:text-white">Behance</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="hover:text-white">Instagram</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
+            {contacts.map(({ label, href, icon: Icon, color }) => (
+              <a key={label} href={href} target="_blank" rel="noreferrer" className="flex items-center gap-1 hover:text-white">
+                <Icon color={color} /> {label}
+              </a>
+            ))}
           </div>
           <p>© {new Date().getFullYear()} Fasikaw Studio</p>
         </div>

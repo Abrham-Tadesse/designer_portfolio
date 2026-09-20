@@ -1,4 +1,5 @@
-import { Mail, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { contacts } from "../data/contacts";
 
 export default function Contact() {
   return (
@@ -15,14 +16,22 @@ export default function Contact() {
           </p>
         </div>
         <div className="md:col-span-5">
-          <a href="mailto:fasikawabateneh69@gmail.com" className="group flex items-center justify-between border-b border-black py-4 text-xl font-semibold">
-            <span className="flex items-center gap-3"><Mail size={20} /> fasikawabateneh69@gmail.com</span>
-            <ArrowUpRight className="transition group-hover:-translate-y-1 group-hover:translate-x-1" />
-          </a>
-          <div className="mt-8 flex gap-6 text-sm">
-            <a href="https://www.behance.net/" target="_blank" rel="noreferrer" className="underline underline-offset-4">Behance</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="underline underline-offset-4">Instagram</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="underline underline-offset-4">LinkedIn</a>
+          <div className="mt-8 flex flex-col border-t border-black/15 text-sm">
+            {contacts.map(({ label, href, icon: Icon, color }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between border-b border-black/15 py-4 hover:text-neutral-500"
+              >
+                <span className="flex items-center gap-3">
+                  <Icon color={color} size={18} />
+                  {label}
+                </span>
+                <ArrowUpRight size={18} className="transition group-hover:-translate-y-1 group-hover:translate-x-1" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
