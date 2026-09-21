@@ -18,7 +18,7 @@ export default function About() {
       </div>
 
       <div className="my-16 overflow-hidden md:my-24">
-        <img src="/images/profile.svg" alt="Designer portrait placeholder" className="aspect-[16/8] w-full object-cover" />
+        <img src="/images/profile/portriate.jpg" alt="Designer portrait" className="aspect-[4/3] w-full object-contain" />
       </div>
 
       <div className="grid gap-12 border-t border-black/15 pt-10 md:grid-cols-12">

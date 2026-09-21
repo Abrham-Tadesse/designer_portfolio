@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-9">
           <img
-            src="/images/profile.svg"
+            src="/images/profile/profile.jpg"
             alt="Fasikaw profile"
             className="mb-5 h-40 w-40 rounded-full object-cover"
           />
